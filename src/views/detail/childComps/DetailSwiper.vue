@@ -1,6 +1,6 @@
 <template>
   <Swiper class="detail-swiper">
-    <SwiperItem v-for="item in topimages" :key="item.index">
+    <SwiperItem v-for="item in topImages" :key="item.index">
       <img :src="item">
     </SwiperItem>
   </Swiper>  
@@ -16,7 +16,7 @@
       SwiperItem
     },
     props: {
-      topimages: {
+      topImages: {
         type: Array,
         default(){
           return []

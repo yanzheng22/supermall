@@ -5,7 +5,7 @@
 
     <Scroll class="content" ref="scroll" @scroll="contentScroll"
     :probetype = '3'>
-      <DetailSwiper :topimages = 'topimages'></DetailSwiper>
+      <DetailSwiper :top-images = 'topImages'></DetailSwiper>
 
       <DetailBaseInfo :goods = 'goods'></DetailBaseInfo>
 
@@ -65,7 +65,7 @@
     data() {
       return {
         iid: null,
-        topimages: [],
+        topImages: [],
         goods: {},
         shop: {},
         detailInfo: {},
@@ -91,7 +91,7 @@
       getDetail(this.iid).then(res => {
         const data = res.result
         //获取顶部的图片轮播数据
-        this.topimages = data.itemInfo.topImages
+        this.topImages = data.itemInfo.topImages
 
         //获取商品信息
         this.goods = new Goods(data.itemInfo, data.columns, data.shopInfo.services)
@@ -154,7 +154,7 @@
       },
       addToCart(){
         const product = {}
-        product.image = this.topimages[0]
+        product.image = this.topImages[0]
         product.title = this.goods.title
         product.desc = this.goods.desc
         product.price = this.goods.realPrice
